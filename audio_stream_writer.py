@@ -60,7 +60,7 @@ class AudioStreamWriter(object):
     # Normalization or clipping.
     scaled_signal = copy.copy(signal)
     if norm > 1.0:
-      logging.warning('Some samples will be clipped.')
+      logging.warning('Some samples will be clipped.', norm)
       # Clip samples above 1 and below -1.
       scaled_signal[scaled_signal < -1] = -1
       scaled_signal[scaled_signal > 1] = 1
